@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Monitor Pro | Rogelio Uribe Rivera</title>
+    <meta name="description" content="Sports Monitor Pro — motor cuantitativo que detecta ineficiencias de precio en mercados deportivos con modelos estadísticos propios. Un solo archivo HTML, sin frameworks ni build.">
+    <link rel="icon" href="Images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("site-lang") === "en") {
+            document.documentElement.classList.add("lang-en");
+            document.documentElement.setAttribute("lang", "en");
+          }
+        } catch (e) {}
+      })();
+    </script>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img src="Images/RR.png" alt="RRoux logo">
+        <span>Rogelio Uribe <span class="brand-tag">· Sports Data</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <div class="nav-links">
+        <a href="#reto"><span data-lang="es">El reto</span><span data-lang="en">The challenge</span></a>
+        <a href="#modelos"><span data-lang="es">Modelos</span><span data-lang="en">Models</span></a>
+        <a href="#capturas"><span data-lang="es">Capturas</span><span data-lang="en">Screenshots</span></a>
+        <a href="#validacion"><span data-lang="es">Validación</span><span data-lang="en">Validation</span></a>
+        <a href="index.html"><span data-lang="es">Portafolio</span><span data-lang="en">Portfolio</span></a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button data-set-lang="es" type="button">ES</button>
+          <button data-set-lang="en" type="button">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero subhero">
+    <div class="container">
+      <a class="back-link" href="index.html" style="color:#93c5fd;">
+        <span data-lang="es">◀ Volver al portafolio</span>
+        <span data-lang="en">◀ Back to portfolio</span>
+      </a>
+      <span class="eyebrow" style="margin-top:18px;">
+        <span data-lang="es">⚙️ Proyecto de modelado cuantitativo</span>
+        <span data-lang="en">⚙️ Quantitative modeling project</span>
+      </span>
+      <h1>Sports Monitor Pro</h1>
+      <p class="role">
+        <span data-lang="es">Motor cuantitativo que detecta ineficiencias de precio en mercados deportivos</span>
+        <span data-lang="en">A quantitative engine that detects pricing inefficiencies in sports markets</span>
+      </p>
+      <p class="lead">
+        <span data-lang="es">Construye sus <strong>propias estimaciones de probabilidad</strong> para cada partido, le quita el margen ("vig") a las cuotas para recuperar la cuota justa, y la compara contra la casa más afilada del mundo (Pinnacle) para detectar dónde una casa blanda está mal valuada. Todo corre en el navegador, en <strong>un solo archivo HTML</strong>, sin servidor, sin npm y sin compilación.</span>
+        <span data-lang="en">It builds its <strong>own probability estimates</strong> for each game, strips the bookmaker margin ("vig") to recover fair odds, and compares them against the sharpest book in the world (Pinnacle) to surface where a soft book is mispriced. Everything runs client-side in <strong>a single HTML file</strong> — no server, no npm, no compilation.</span>
+      </p>
+
+      <div class="badges">
+        <span class="badge-pill"><span class="dot"></span>Vanilla JS · 0 frameworks</span>
+        <span class="badge-pill"><span class="dot blue"></span>Single file · file://</span>
+        <span class="badge-pill"><span class="dot"></span>No build step</span>
+        <span class="badge-pill"><span class="dot purple"></span>131 self-tests</span>
+        <span class="badge-pill"><span class="dot blue"></span>7 <span data-lang="es">fuentes de datos</span><span data-lang="en">data sources</span></span>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#capturas">
+          <span data-lang="es">Ver capturas →</span>
+          <span data-lang="en">See screenshots →</span>
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rogelio-uribe-rivera-0778742a7/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="https://github.com/RRouxx" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== METRICS ===================== -->
+  <section style="padding:48px 0;">
+    <div class="container">
+      <div class="metrics">
+        <div class="metric">
+          <div class="num">~16K</div>
+          <div class="lbl"><span data-lang="es">líneas · 1 solo archivo</span><span data-lang="en">lines · single file</span></div>
+        </div>
+        <div class="metric">
+          <div class="num">5</div>
+          <div class="lbl"><span data-lang="es">modelos predictivos propios</span><span data-lang="en">custom predictive models</span></div>
+        </div>
+        <div class="metric">
+          <div class="num">7</div>
+          <div class="lbl"><span data-lang="es">fuentes de datos integradas</span><span data-lang="en">integrated data sources</span></div>
+        </div>
+        <div class="metric">
+          <div class="num">131</div>
+          <div class="lbl"><span data-lang="es">pruebas automáticas en el navegador</span><span data-lang="en">in-browser self-tests</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE CHALLENGE ===================== -->
+  <section id="reto" class="section-alt">
+    <div class="container">
+      <div class="grid grid-2">
+        <div>
+          <div class="section-head" style="margin-bottom:18px;">
+            <span class="tag"><span data-lang="es">El reto</span><span data-lang="en">The challenge</span></span>
+            <h2><span data-lang="es">¿Por qué lo construí?</span><span data-lang="en">Why I built it</span></h2>
+          </div>
+          <p data-lang="es">Los mercados deportivos son eficientes, pero no perfectos. Quería responder una pregunta cuantitativa difícil, de principio a fin:</p>
+          <p data-lang="en">Sports markets are efficient — but not perfect. I wanted to answer one hard quantitative question, end to end:</p>
+          <div class="note" style="font-size:1rem;border-left-color:var(--brand);">
+            <em data-lang="es">"Dado un flujo de datos públicos y ruidosos, ¿puedo estimar probabilidades justas lo bastante bien como para detectar cuándo un mercado está mal valuado — y demostrarlo con mi propia validación, gratis?"</em>
+            <em data-lang="en">"Given noisy public data, can I estimate fair probabilities well enough to detect when a market is mispriced — and prove it with my own validation, for free?"</em>
+          </div>
+        </div>
+        <div>
+          <p data-lang="es" style="margin-top:46px;">Eso exigió resolver varios problemas reales: construir modelos calibrados desde cero, quitar el margen de la casa correctamente, integrar media docena de APIs públicas inestables desde el navegador y —lo más difícil— <strong>validar el modelo con honestidad</strong> sin pagar por datos históricos de cuotas.</p>
+          <p data-lang="en" style="margin-top:46px;">That required solving several real problems: building calibrated models from scratch, removing the bookmaker margin correctly, integrating half a dozen flaky public APIs from the browser, and — the hard part — <strong>validating the model honestly</strong> without paying for historical odds data.</p>
+          <p data-lang="es">En el fondo, es un proyecto de <strong>modelado predictivo + ingeniería de datos</strong> disfrazado de tablero de apuestas.</p>
+          <p data-lang="en">At its core, it's a <strong>predictive-modeling + data-engineering</strong> project disguised as a betting dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MODELS ===================== -->
+  <section id="modelos">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag"><span data-lang="es">Modelos propios</span><span data-lang="en">Custom models</span></span>
+        <h2><span data-lang="es">Modelos predictivos — JavaScript puro, sin librerías</span><span data-lang="en">Predictive models — pure JavaScript, no libraries</span></h2>
+        <p><span data-lang="es">Cinco modelos construidos desde cero, calibrados para no sobre-dispersar.</span><span data-lang="en">Five models built from scratch, calibrated to avoid over-dispersion.</span></p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">⚽</div>
+          <h3>Dixon-Coles</h3>
+          <p><span data-lang="es">Modelo Poisson de goles con ponderación por recencia, splits local/visita, ajuste por fuerza del rival y shrinkage por deporte.</span><span data-lang="en">Poisson goal model with recency weighting, home/away splits, opponent-strength adjustment and per-sport shrinkage.</span></p>
+        </div>
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Elo</h3>
+          <p><span data-lang="es">Sistema de rating con escalado por margen de victoria y decaimiento entre temporadas (con backfill histórico en Python).</span><span data-lang="en">Rating system with margin-of-victory scaling and inter-season decay (with a Python historical backfill).</span></p>
+        </div>
+        <div class="card">
+          <div class="icon">🧬</div>
+          <h3>Ensemble</h3>
+          <p><span data-lang="es">Combina Elo + Dixon-Coles + xG en una sola probabilidad calibrada.</span><span data-lang="en">Blends Elo + Dixon-Coles + xG into a single calibrated probability.</span></p>
+        </div>
+        <div class="card">
+          <div class="icon">📈</div>
+          <h3><span data-lang="es">Modelo Normal</span><span data-lang="en">Normal score model</span></h3>
+          <p><span data-lang="es">Para deportes de muchos puntos (NBA/NFL) donde Poisson no aplica.</span><span data-lang="en">For high-scoring sports (NBA/NFL) where Poisson doesn't fit.</span></p>
+        </div>
+        <div class="card">
+          <div class="icon">🎯</div>
+          <h3>True Number</h3>
+          <p><span data-lang="es">De-vig no lineal (probit) de la moneyline a un spread implícito para detectar líneas mal valuadas.</span><span data-lang="en">Non-linear (probit) de-vig of the moneyline into an implied spread to flag mispriced lines.</span></p>
+        </div>
+        <div class="card" style="background:linear-gradient(135deg,var(--navy-2),var(--navy-3));border-color:transparent;color:#e5e9f4;">
+          <div class="icon" style="background:rgba(16,185,129,.18);">💰</div>
+          <h3 style="color:#fff;"><span data-lang="es">Motor de valor</span><span data-lang="en">Value engine</span></h3>
+          <p style="color:#c3cce0;"><span data-lang="es">De-vig multiplicativo y de potencia, edge vs Pinnacle en puntos porcentuales, CLV y un <strong>Pick Grade (A/B/C/D)</strong> que fusiona todas las señales.</span><span data-lang="en">Multiplicative &amp; power de-vigging, edge vs Pinnacle in points, CLV, and a unified <strong>Pick Grade (A/B/C/D)</strong> fusing every signal.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HIGHLIGHT: VALIDATION LOOP ===================== -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="featured">
+        <div>
+          <span class="badge"><span data-lang="es">La pieza estrella</span><span data-lang="en">The standout feature</span></span>
+          <h2><span data-lang="es">Loop de auto-validación gratis</span><span data-lang="en">Free self-validating loop</span></h2>
+          <p data-lang="es">La herramienta <strong>registra sus propios picks calificados</strong> y los resuelve después usando marcadores públicos gratuitos (ESPN) — construyendo un dataset privado de desempeño y reportando <strong>ROI por grade</strong>, sin pagar por una API de históricos.</p>
+          <p data-lang="en">The tool <strong>logs its own graded picks</strong> and resolves them later using free public box scores (ESPN) — building a private performance dataset and reporting <strong>ROI by grade</strong>, with no paid historical API.</p>
+          <ul>
+            <li><span data-lang="es">Auto-calibración con regresión logística / Platt (gradiente descendente, sin librerías de ML)</span><span data-lang="en">Auto-calibration via logistic regression / Platt scaling (gradient descent, no ML libraries)</span></li>
+            <li><span data-lang="es">Análisis de predictividad por señal alimentado por el loop</span><span data-lang="en">Per-signal predictiveness analysis driven by the loop</span></li>
+            <li><span data-lang="es">CLV — el estándar de oro para probar un edge</span><span data-lang="en">CLV — the gold standard for proving an edge</span></li>
+          </ul>
+        </div>
+        <div class="mock" aria-hidden="true">
+          <div class="mock-head"><span></span><span></span><span></span></div>
+          <div class="mock-row"><span>Grade A · ROI</span><b class="up">en seguimiento</b></div>
+          <div class="mock-row"><span>Grade B · ROI</span><b class="up">+61%</b></div>
+          <div class="mock-row"><span>Grade C · baseline</span><b class="down">−1.1%</b></div>
+          <div class="mock-row"><span>CLV beat-the-close</span><b>33%</b></div>
+          <div class="mock-bars">
+            <i style="height:30%"></i><i style="height:55%"></i><i style="height:48%"></i>
+            <i style="height:78%"></i><i style="height:60%"></i><i style="height:92%"></i><i style="height:70%"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:24px;">
+        <div class="card">
+          <div class="icon">🤖</div>
+          <h3><span data-lang="es">Integración con IA (Claude)</span><span data-lang="en">LLM integration (Claude)</span></h3>
+          <p><span data-lang="es">API de Anthropic Claude con <strong>salida estructurada</strong> (JSON válido garantizado) y <strong>prompt caching</strong> para eficiencia de costo, como segunda opinión cualitativa en todos los mercados.</span><span data-lang="en">Anthropic Claude API with <strong>structured outputs</strong> (guaranteed-valid JSON) and <strong>prompt caching</strong> for cost efficiency, giving a qualitative second opinion across all markets.</span></p>
+        </div>
+        <div class="card">
+          <div class="icon">🧪</div>
+          <h3><span data-lang="es">Ingeniería &amp; UX</span><span data-lang="en">Engineering &amp; UX</span></h3>
+          <p><span data-lang="es">131 pruebas automáticas en el navegador (testing sin Node.js) + checks de integración. UI oscura responsive (Sora/Inter, barras modelo-vs-mercado, tabs por tarjeta).</span><span data-lang="en">131 in-browser self-tests (testing without Node.js) + integration checks. Responsive dark UI (Sora/Inter, model-vs-market bars, per-card tabs).</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SCREENSHOTS ===================== -->
+  <section id="capturas">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag"><span data-lang="es">Producto</span><span data-lang="en">Product</span></span>
+        <h2><span data-lang="es">La herramienta en acción</span><span data-lang="en">The tool in action</span></h2>
+        <p><span data-lang="es">Clic en cualquier imagen para verla en tamaño completo.</span><span data-lang="en">Click any image to view it full size.</span></p>
+      </div>
+
+      <!-- Feature shot -->
+      <a class="shot feature shot-feature" href="Images/01-board.png" target="_blank" rel="noopener">
+        <div class="winbar"><i></i><i></i><i></i><span class="url">sports-monitor-pro · Sí o Sí</span></div>
+        <div class="frame"><img src="Images/01-board.png" alt="Tablero de valor cross-sport"></div>
+        <div class="cap">
+          <b><span data-lang="es">Tablero de valor cross-sport ("Sí o Sí")</span><span data-lang="en">Cross-sport value board ("Sí o Sí")</span></b>
+          <span data-lang="es">Los mejores edges del día en todos los deportes, con gestión de Bankroll y simulador de crecimiento Kelly.</span>
+          <span data-lang="en">The best edges of the day across all sports, with Bankroll management and a Kelly growth simulator.</span>
+        </div>
+      </a>
+
+      <!-- Gallery -->
+      <div class="gallery">
+        <a class="shot" href="Images/02-markets.png" target="_blank" rel="noopener">
+          <div class="winbar"><i></i><i></i><i></i></div>
+          <div class="frame"><img src="Images/02-markets.png" alt="Tarjeta de partido modelo vs mercado"></div>
+          <div class="cap">
+            <b><span data-lang="es">Tarjeta de partido · modelo vs mercado</span><span data-lang="en">Game card · model vs market</span></b>
+            <span data-lang="es">Barras de probabilidad por mercado y la disciplina "PASAR" cuando no hay valor.</span>
+            <span data-lang="en">Per-market probability bars and the "PASS" discipline when there is no value.</span>
+          </div>
+        </a>
+        <a class="shot" href="Images/03-models.png" target="_blank" rel="noopener">
+          <div class="winbar"><i></i><i></i><i></i></div>
+          <div class="frame"><img src="Images/03-models.png" alt="Modelos propios Dixon-Coles y ensemble"></div>
+          <div class="cap">
+            <b><span data-lang="es">Modelos propios (Dixon-Coles + ensemble)</span><span data-lang="en">Own models (Dixon-Coles + ensemble)</span></b>
+            <span data-lang="es">Probabilidades calculadas desde cero, contrastadas con el mercado.</span>
+            <span data-lang="en">Probabilities computed from scratch, contrasted against the market.</span>
+          </div>
+        </a>
+        <a class="shot" href="Images/04-trends.png" target="_blank" rel="noopener">
+          <div class="winbar"><i></i><i></i><i></i></div>
+          <div class="frame"><img src="Images/04-trends.png" alt="Tendencias y forma"></div>
+          <div class="cap">
+            <b><span data-lang="es">Tendencias y forma</span><span data-lang="en">Trends &amp; form</span></b>
+            <span data-lang="es">Forma reciente, H2H y contexto situacional por equipo.</span>
+            <span data-lang="en">Recent form, H2H and situational context per team.</span>
+          </div>
+        </a>
+        <a class="shot" href="Images/05-live.png" target="_blank" rel="noopener">
+          <div class="winbar"><i></i><i></i><i></i></div>
+          <div class="frame"><img src="Images/05-live.png" alt="Tablero en vivo"></div>
+          <div class="cap">
+            <b><span data-lang="es">Tablero en vivo (in-play)</span><span data-lang="en">Live in-play board</span></b>
+            <span data-lang="es">Edge en tiempo real mientras el partido corre.</span>
+            <span data-lang="en">Real-time edge while the game is running.</span>
+          </div>
+        </a>
+        <a class="shot" href="Images/06-loop.png" target="_blank" rel="noopener">
+          <div class="winbar"><i></i><i></i><i></i></div>
+          <div class="frame"><img src="Images/06-loop.png" alt="Loop de validación ROI por grade"></div>
+          <div class="cap">
+            <b><span data-lang="es">Loop de validación — ROI por grade</span><span data-lang="en">Validation loop — ROI by grade</span></b>
+            <span data-lang="es">Auto-validación gratis: calibración, predictividad de señales y CLV.</span>
+            <span data-lang="en">Free self-validation: calibration, signal predictiveness and CLV.</span>
+          </div>
+        </a>
+        <a class="shot" href="Images/07-parlay.png" target="_blank" rel="noopener">
+          <div class="winbar"><i></i><i></i><i></i></div>
+          <div class="frame"><img src="Images/07-parlay.png" alt="Optimizador de parlay cross-sport"></div>
+          <div class="cap">
+            <b><span data-lang="es">Optimizador de parlay cross-sport</span><span data-lang="en">Cross-sport parlay optimizer</span></b>
+            <span data-lang="es">Combina picks de distintos deportes maximizando el EV.</span>
+            <span data-lang="en">Combines picks across sports to maximize EV.</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DATA PIPELINE ===================== -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag"><span data-lang="es">Datos</span><span data-lang="en">Data</span></span>
+        <h2><span data-lang="es">El pipeline de datos</span><span data-lang="en">The data pipeline</span></h2>
+        <p><span data-lang="es">Siete fuentes integradas, con capa de fallback vía proxy CORS.</span><span data-lang="en">Seven integrated sources, with a CORS-proxy fallback layer.</span></p>
+      </div>
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th><span data-lang="es">Fuente</span><span data-lang="en">Source</span></th>
+              <th>Auth</th>
+              <th><span data-lang="es">Para qué</span><span data-lang="en">Used for</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>The Odds API</td><td>API key</td><td><span data-lang="es">Cuotas, edge vs Pinnacle, props</span><span data-lang="en">Odds, edge vs Pinnacle, props</span></td></tr>
+            <tr><td>ESPN</td><td><span data-lang="es">ninguna</span><span data-lang="en">none</span></td><td><span data-lang="es">Marcadores, lesiones, forma, standings, resolución gratis de resultados</span><span data-lang="en">Scores, injuries, form, standings, free result resolution</span></td></tr>
+            <tr><td>MLB Stats API</td><td><span data-lang="es">ninguna</span><span data-lang="en">none</span></td><td><span data-lang="es">Pitchers probables, ERA, box scores</span><span data-lang="en">Probable pitchers, ERA, box scores</span></td></tr>
+            <tr><td>Basketball-Reference</td><td>CORS proxy</td><td><span data-lang="es">Stats avanzados NBA (ORtg/DRtg/Pace)</span><span data-lang="en">NBA advanced stats (ORtg/DRtg/Pace)</span></td></tr>
+            <tr><td>FBref</td><td>CORS proxy</td><td><span data-lang="es">xG de fútbol</span><span data-lang="en">Soccer xG</span></td></tr>
+            <tr><td>OpenWeather / Open-Meteo</td><td><span data-lang="es">key opcional</span><span data-lang="en">optional key</span></td><td><span data-lang="es">Impacto del clima en los totales</span><span data-lang="en">Weather impact on totals</span></td></tr>
+            <tr><td>Anthropic Claude</td><td>API key</td><td><span data-lang="es">Análisis cualitativo</span><span data-lang="en">Qualitative analysis</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VALIDATION + ARCHITECTURE ===================== -->
+  <section id="validacion">
+    <div class="container">
+      <div class="grid grid-2">
+        <div>
+          <div class="section-head" style="margin-bottom:18px;">
+            <span class="tag"><span data-lang="es">Metodología</span><span data-lang="en">Methodology</span></span>
+            <h2><span data-lang="es">Validación honesta</span><span data-lang="en">Honest validation</span></h2>
+          </div>
+          <p data-lang="es">La mayoría de los "modelos de apuestas" nunca se validan con honestidad. Este sí, y gratis:</p>
+          <p data-lang="en">Most "betting models" are never honestly validated. This one is, for free:</p>
+          <ol style="color:var(--ink-2);padding-left:20px;">
+            <li><span data-lang="es">Cada pick Grade A/B/C se registra en un dataset local (IndexedDB).</span><span data-lang="en">Every Grade A/B/C pick is logged to a local dataset (IndexedDB).</span></li>
+            <li><span data-lang="es">Al terminar los partidos, los resultados se leen de los box scores gratis de ESPN.</span><span data-lang="en">After games finish, results are pulled from free ESPN box scores.</span></li>
+            <li><span data-lang="es">El tablero reporta el <strong>ROI por grade</strong> — confirmando si los grades altos ganan más.</span><span data-lang="en">The dashboard reports <strong>ROI per grade</strong> — confirming whether higher grades actually win more.</span></li>
+            <li><span data-lang="es">El <strong>CLV</strong> mide si los picks le ganan al cierre de la línea.</span><span data-lang="en"><strong>CLV</strong> measures whether picks beat the closing line.</span></li>
+          </ol>
+          <div class="note">
+            <span data-lang="es">⚖️ La disciplina que más importa: la herramienta dice <strong>"PASAR"</strong> cuando no hay valor. En días de mercado eficiente no recomienda nada — honestidad sobre falsos positivos.</span>
+            <span data-lang="en">⚖️ The discipline that matters most: the tool says <strong>"PASS"</strong> when there is no edge. On efficient-market days it recommends nothing — honesty over false positives.</span>
+          </div>
+        </div>
+        <div>
+          <div class="section-head" style="margin-bottom:18px;">
+            <span class="tag"><span data-lang="es">Arquitectura</span><span data-lang="en">Architecture</span></span>
+            <h2><span data-lang="es">Un solo archivo, a propósito</span><span data-lang="en">Single-file by design</span></h2>
+          </div>
+          <p data-lang="es">Una arquitectura deliberada de <strong>un solo archivo <code>file://</code></strong>: sin herramientas de build, sin dependencias, máxima portabilidad.</p>
+          <p data-lang="en">A deliberate <strong>single-file <code>file://</code> architecture</strong>: no build tools, no dependencies, maximum portability.</p>
+          <div class="card" style="font-family:var(--font-head);font-size:.86rem;line-height:1.7;background:#0b1220;color:#cbd5e1;border-color:#1e2a47;">
+<pre style="margin:0;white-space:pre-wrap;font-family:inherit;">index.html
+├── &lt;style&gt;  →  <span style="color:#93c5fd;">design system + responsive</span>
+├── HTML     →  <span style="color:#93c5fd;">tab structure</span>
+└── &lt;script&gt; →  <span style="color:#6ee7b7;">~13K líneas de JS</span>
+              <span style="color:#94a3b8;">~90 secciones: motor de valor ·
+              modelos · fetchers · render ·
+              loop de validación · cliente LLM</span></pre>
+          </div>
+          <p style="margin-top:14px;" data-lang="es">Abre al instante vía <code>file://</code> sin configuración, es trivial de respaldar y depurar, y corre donde haya un navegador. Un script en Python (<code>elo_backfill.py</code>) inicializa los ratings Elo históricos offline.</p>
+          <p style="margin-top:14px;" data-lang="en">It opens instantly via <code>file://</code> with no setup, is trivial to back up and debug, and runs anywhere a browser does. A Python helper (<code>elo_backfill.py</code>) bootstraps historical Elo ratings offline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ENGINEERING CHALLENGES ===================== -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag"><span data-lang="es">Ingeniería</span><span data-lang="en">Engineering</span></span>
+        <h2><span data-lang="es">Retos resueltos</span><span data-lang="en">Challenges solved</span></h2>
+      </div>
+      <div class="grid grid-2">
+        <ul class="checks">
+          <li>
+            <span class="ck">✓</span>
+            <div>
+              <strong><span data-lang="es">Restricciones de <code>file://</code></span><span data-lang="en"><code>file://</code> constraints</span></strong>
+              <p data-lang="es">Sin módulos ES y con CORS del navegador → resuelto con scripts clásicos + una capa de fallback con proxy CORS.</p>
+              <p data-lang="en">No ES modules and browser CORS → solved with classic scripts + a CORS-proxy fallback layer.</p>
+            </div>
+          </li>
+          <li>
+            <span class="ck">✓</span>
+            <div>
+              <strong><span data-lang="es">Calibración del modelo</span><span data-lang="en">Model calibration</span></strong>
+              <p data-lang="es">Detecté y corregí una sobre-dispersión del Dixon-Coles (un total de béisbol de 14.5 → ~9 carreras) con shrinkage y clamping por deporte.</p>
+              <p data-lang="en">Debugged and fixed a Dixon-Coles over-dispersion (a baseball total of 14.5 → ~9 runs) via per-sport shrinkage and clamping.</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="checks">
+          <li>
+            <span class="ck">✓</span>
+            <div>
+              <strong><span data-lang="es">Testing sin Node</span><span data-lang="en">Testing without Node</span></strong>
+              <p data-lang="es">Construí un harness de 131 pruebas que corre en el navegador y se verifica de forma headless.</p>
+              <p data-lang="en">Built a 131-case self-test harness that runs in the browser and is verified headlessly.</p>
+            </div>
+          </li>
+          <li>
+            <span class="ck">✓</span>
+            <div>
+              <strong><span data-lang="es">Disciplina de integridad de datos</span><span data-lang="en">Data integrity discipline</span></strong>
+              <p data-lang="es">Una regla estricta contra fabricar cualquier señal sin una fuente real; las estimaciones siempre se etiquetan como tales.</p>
+              <p data-lang="en">A strict rule against fabricating any signal without a real source; estimates are always labeled.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TECH STACK ===================== -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Stack</span>
+        <h2><span data-lang="es">Tecnologías</span><span data-lang="en">Tech stack</span></h2>
+      </div>
+      <div class="chips">
+        <span class="chip is-primary">Vanilla JavaScript</span>
+        <span class="chip is-primary">CSS <span data-lang="es">(diseño propio)</span><span data-lang="en">(custom design)</span></span>
+        <span class="chip is-primary">IndexedDB / localStorage</span>
+        <span class="chip is-accent">The Odds API</span>
+        <span class="chip is-accent">ESPN API</span>
+        <span class="chip is-accent">MLB Stats API</span>
+        <span class="chip is-accent">Anthropic Claude API</span>
+        <span class="chip">Python <span data-lang="es">(backfill Elo)</span><span data-lang="en">(Elo backfill)</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section id="cta" class="contact">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom:10px;"><span data-lang="es">¿Hablamos de modelado deportivo?</span><span data-lang="en">Let's talk sports modeling</span></h2>
+      <p style="max-width:620px;margin:0 auto 24px;">
+        <span data-lang="es">Si quieres saber más sobre Sports Monitor Pro o un proyecto de análisis de datos, contáctame.</span>
+        <span data-lang="en">If you want to know more about Sports Monitor Pro or a data-analysis project, get in touch.</span>
+      </p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="mailto:rogelio.uribe.r@hotmail.com"><span data-lang="es">Escríbeme</span><span data-lang="en">Email me</span></a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rogelio-uribe-rivera-0778742a7/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="index.html#proyectos"><span data-lang="es">Más proyectos</span><span data-lang="en">More projects</span></a>
+      </div>
+      <p style="margin:28px auto 0;max-width:640px;font-size:.85rem;color:#8493b5;">
+        <span data-lang="es">⚠️ Proyecto personal de investigación en modelado estadístico e ingeniería de datos. No coloca apuestas y no es asesoría financiera.</span>
+        <span data-lang="en">⚠️ Personal research project for statistical modeling and data engineering. It does not place bets and is not financial advice.</span>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 Rogelio "RRoux" Uribe Rivera ·
+      <span data-lang="es">Analista de Datos Deportivos</span>
+      <span data-lang="en">Sports Data Analyst</span>
+    </div>
+  </footer>
+
+  <script src="js/lang.js"></script>
+</body>
+</html>

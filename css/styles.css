@@ -1,304 +1,180 @@
-/*********************************  TAG *********************************/
+/* =========================================================
+   Legacy project pages (game dev) — refreshed to match the
+   new professional theme. Class names are preserved so the
+   existing HTML keeps working without edits.
+   ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap");
 
-body{
-    margin: 0;
-    font-family: 'Gloock', serif;
-    background: rgb(13, 1, 71);
-    color: white;
-    text-align: center;
-
+:root {
+  --bg:        #f4f7fb;
+  --surface:   #ffffff;
+  --ink:       #0f172a;
+  --ink-2:     #334155;
+  --muted:     #64748b;
+  --border:    #e2e8f0;
+  --primary:   #2563eb;
+  --brand:     #7c3aed;
+  --accent:    #10b981;
+  --radius:    16px;
+  --shadow:    0 6px 24px rgba(15, 23, 42, .08);
 }
 
-h1{
-    margin: 0;
-    font-family: 'Gloock', serif;
-    color: rgb(226, 3, 255);
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink-2);
+  text-align: center;
+  line-height: 1.7;
+  padding: 0 16px 60px;
+  -webkit-font-smoothing: antialiased;
 }
 
-h2{
-    margin: 0;
-    font-family: 'Gloock', serif;
-    color: rgb(0, 195, 255);
+h1, h2, h3 {
+  font-family: "Sora", system-ui, sans-serif;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
-h3{
-    margin: 0;
-    font-family: 'Gloock', serif;
-    color: white;
+h1 { color: var(--ink);     font-size: clamp(1.9rem, 5vw, 2.8rem); margin: 14px 0; }
+h2 { color: var(--primary); font-size: clamp(1.3rem, 3.5vw, 1.8rem); margin: 28px 0 10px; }
+h3 { color: var(--ink); }
+
+p  { color: var(--ink-2); margin: 0 0 .8rem; }
+a  { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+em { color: var(--brand); font-style: italic; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+iframe {
+  max-width: 100%;
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 10px auto;
 }
 
-p{
-    font-family: 'Gloock', cursive;
-    color: rgb(255, 255, 255);
+ul, ol { color: var(--ink-2); }
+
+/* ---------- Layout containers ---------- */
+.mid-container,
+.skills {
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-li
-    {
-        color: rgb(255, 255, 255);
-        text-transform: uppercase;
-        font-family: 'Gloock', serif;
-        list-style: none;
-        letter-spacing: 2.5px;
-    }
-
-    li:before
-    {
-        content: "\1F0A1";
-        color: rgb(255, 0, 0);
-        margin-right: 20px;
-    }
-    
-    a{
-      color:rgb(226, 3, 255);
-    }
-
-
-/*********************************  CLASS *********************************/
-
-.top-container
-{
-    /*height: 200px;
-    background-color: rgb(255, 0, 255);
-    width: 200px;
-    background: linear-gradient(45deg, rgb(0, 238, 255), rgb(255, 0, 255));
-    position: absolute;*/
-    position: relative;
+.profile {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 34px 30px;
+  margin: 34px auto 0;
+  max-width: 820px;
 }
 
-.mid-container
-{
-    /*height: 200px;
-    background-color: rgb(143, 23, 255);
-    width: 200px;
-    position: absolute;
-    left: 200px;
-    top: 200px;*/
+.profile-desc { color: var(--muted); }
 
+/* ---------- Gallery ---------- */
+.gallery-row {
+  display: inline-block;
+  margin: 14px;
+  vertical-align: top;
 }
 
-.bot-container
-{
-    /*height: 200px;
-    background-color: rgb(6, 35, 240);
-    width: 200px;
-    position: absolute;
-    left: 400px;
-    top: 200px;*/
-    margin: 0;
-    padding: 40px 0;
+.gallery-img,
+.gallery-row img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.mobile
-{
-    /*height: 200px;
-    background-color: rgb(255, 0, 255);
-
-    width: 200px;
-    position: fixed;
-    left: 200px;*/
-    
-}
- .rubik-top
- {
-      width: 180px;
-      position: absolute;
-      top: 80px;
-      right: 300px;
- }
-
- .rubik-bot
- {
-      width: 180px;
-      position: absolute;
-      top: 80px;
-      left: 300px;
-      /*-webkit-transform: scaleX(-1);
-      transform: scaleX(-1);*/
+.gallery-row img:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, .18);
 }
 
- .name
- {
-      position: relative;
-      bottom: 0px;
-      font-size: 50px;
-      color: rgb(119, 0, 255);
- }
-
- .subtitle
- {
-      position: relative;
-      bottom: px;
-      font-size: 25px;
-      color: rgb(0, 238, 255);
-      font-weight: 700;
-
- }
- .gameplay
- {
-    text-decoration: underline;
- }
-
- .sun
- {
-      border-radius: 100%;
-      display: block;
-      margin: 0 auto;
- }
- 
- .skill-row
- {
-      display: inline-block;
-      margin: 70px 100px;
-
- }
-
- .gallery-row
- {
-      display: inline-block;
-      margin: 20px 100px;
-
- }
-
- .gallery-img
- {
-    width: 70%;
- }
-
- .skill1-img
- {
-    width: 100px;
- }
-
- .skill2-img
- {
-    width: 100px;
- }
-
- .skill3-img
- {
-    width: 100px;
- }
-
- .software
- {
-   margin: 50px 0 80px;
+/* ---------- Tables (credits / work experience) ---------- */
+.credits-table,
+.skills-table {
+  margin: 24px auto;
+  max-width: 720px;
 }
 
-.software-row
-{
-   width: 60%;
-   margin: 50px auto;
+.work-experience,
+.backfill-table {
+  width: 100%;
+  margin: 18px auto;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  font-family: "Inter", sans-serif;
+  text-align: left;
 }
 
-.skills-table
-{
-   width: 25%;
-   margin: 50px auto;
+.work-experience th,
+.backfill-table th {
+  background: var(--ink);
+  color: #fff;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  padding: 12px 16px;
 }
 
-.credits-table
-{
-   width: 15%;
-   margin: 50px auto;
+.work-experience td,
+.backfill-table td,
+.backfill-skills td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink-2);
 }
 
+.work-experience tr:last-child td { border-bottom: 0; }
+.work-experience tr:nth-child(even) td { background: #f8fafc; }
 
-.software div:nth-child(even)
-{
-   text-align: left;
+.backfill-skills { width: 100%; }
+
+/* ---------- Divider ---------- */
+.footer-hr {
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--brand));
+  border: 0;
+  border-radius: 10px;
+  width: min(90%, 900px);
+  margin: 40px auto;
+  opacity: .85;
 }
 
-.software div:nth-child(odd)
-{
-   text-align: right;
+/* ---------- Back link (the trailing <h2><a>◀ Back</a></h2>) ---------- */
+body > h2:last-of-type {
+  margin: 30px auto;
 }
 
-.software-img
-{
-   height: 100px;
-   padding: 20px;
-   margin: 0 20px;
+body > h2:last-of-type a,
+a[href="index.html"] {
+  display: inline-block;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--brand));
+  padding: 10px 22px;
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, .3);
 }
 
-.si-l
-{
-   float: left;
+body > h2:last-of-type a:hover,
+a[href="index.html"]:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
 }
-
-.si-r
-{
-   float: right;
-}
-
-.get-in-touch
-{
-   font-family: 'Gloock', serif;
-}
-
-.together
-{
-   font-family: 'Gloock', serif;
-}
-
-.footer-hr
-{
-   height: 5px;
-   background-color:rgb(0, 238, 255);
-   border-style: solid;
-   border-radius: 10px;
-   width: 90%;
-}
-
-.backfill-table
-    {
-        background-color: linear-gradient(45deg, rgb(0, 238, 255), rgb(255, 0, 255));
-        margin: 25px 0;
-        font-family: 'Gloock', serif;
-        box-shadow: 0 0 20px black;
-        text-align: center;
-    }
-
-    .work-experience
-    {
-         background-color: linear-gradient(45deg, rgb(0, 238, 255), rgb(255, 0, 255));
-        margin: 25px 0;
-        font-family: 'Gloock', serif;
-        min-height: 500px;
-        box-shadow: 0 0 20px black;
-        text-align: center;
-        
-
-    }
-
-.btn 
-{
-   background: #ff00ff;
-   background-image: -webkit-linear-gradient(top, #ff00ff, #2bb8ac);
-   background-image: -moz-linear-gradient(top, #ff00ff, #2bb8ac);
-   background-image: -ms-linear-gradient(top, #ff00ff, #2bb8ac);
-   background-image: -o-linear-gradient(top, #ff00ff, #2bb8ac);
-   background-image: linear-gradient(to bottom, #ff00ff, #2bb8ac);
-   -webkit-border-radius: 11;
-   -moz-border-radius: 11;
-   border-radius: 11px;
-   -webkit-box-shadow: 0px 1px 3px #000000;
-   -moz-box-shadow: 0px 1px 3px #000000;
-   box-shadow: 0px 1px 3px #000000;
-   font-family: Courier New;
-   color: #00ffff;
-   font-size: 20px;
-   padding: 10px 20px 10px 20px;
-   border: solid #8808ff 2px;
-   text-decoration: none;
- }
- 
- .btn:hover 
- {
-   background: #00e1ff;
-   background-image: -webkit-linear-gradient(top, #00e1ff, #f200ff);
-   background-image: -moz-linear-gradient(top, #00e1ff, #f200ff);
-   background-image: -ms-linear-gradient(top, #00e1ff, #f200ff);
-   background-image: -o-linear-gradient(top, #00e1ff, #f200ff);
-   background-image: linear-gradient(to bottom, #00e1ff, #f200ff);
-   text-decoration: none;
- }
